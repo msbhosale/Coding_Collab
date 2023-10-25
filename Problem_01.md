@@ -7,9 +7,7 @@ You are tasked with building a RESTful API for managing student records using Sp
 - Student ID
 - First Name
 - Last Name
-- Date of Birth
 - Email Address
-- Course Enrolled
 
 Your task is to design the API, implement the necessary endpoints, and write JUnit test cases to ensure its functionality.
 
