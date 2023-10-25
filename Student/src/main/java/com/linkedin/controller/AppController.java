@@ -3,6 +3,7 @@ package com.linkedin.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,12 +18,18 @@ public class AppController {
 
 	@Autowired
 	private StudentService studentService;
-	
+
+	@GetMapping("/")
+	public String test() {
+
+		return "<h1>App running..</h1>";
+	}
+
 	@PostMapping("/students")
-	public ResponseEntity<Student> save(@RequestBody Student student){
-		
+	public ResponseEntity<Student> save(@RequestBody Student student) {
+
 		Student savedStudent = studentService.save(student);
-		
+
 		return ResponseEntity.status(HttpStatus.CREATED).body(savedStudent);
 	}
 }
